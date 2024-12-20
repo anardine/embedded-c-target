@@ -28,7 +28,7 @@ int main(void)
 {
     /* Loop forever */
 
-	unsigned int banana = 10000000;
+	unsigned int banana = 1000000000000;
 
 	printf("Hello World\n");
 
