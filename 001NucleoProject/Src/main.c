@@ -28,14 +28,12 @@ int main(void)
 {
     /* Loop forever */
 
-	unsigned int banana = 10000000;
+	unsigned int x = 123;
+	int y = 456;
 
-	printf("Hello World\n");
+	int result = x+y;
 
-	printf("Size of the char type is:%d \n",sizeof(char));
-	printf("Size of the int type is:%d \n",sizeof(int));
-	printf("Size of the double type is:%d \n",sizeof(double));
-	printf("Size of the banana(int) type is:%d \n",sizeof(banana));
+	printf("Value of result is: %d",result);
 
 	for(;;);
 }
