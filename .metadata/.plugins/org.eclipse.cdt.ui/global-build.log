@@ -1,31 +1,24 @@
-11:35:40 **** Incremental Build of configuration Debug for project 001NucleoProject ****
+16:08:41 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
 make -j11 all 
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-../Src/main.c:22:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
-   22 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+../Src/main.c:23:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   23 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
       |    ^~~~~~~
-arm-none-eabi-gcc -o "001NucleoProject.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alessandro.nardinelli/Documents/Embedded-C/my_workspace/target/001NucleoProject/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="001NucleoProject.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 001NucleoProject.elf
+arm-none-eabi-gcc -o "LED_RAW_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alessandro.nardinelli/Documents/Embedded-C/my_workspace/target/LED_RAW_TEST/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_RAW_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LED_RAW_TEST.elf
  
-arm-none-eabi-size  001NucleoProject.elf 
-arm-none-eabi-objdump -h -S 001NucleoProject.elf  > "001NucleoProject.list"
+arm-none-eabi-size  LED_RAW_TEST.elf 
+arm-none-eabi-objdump -h -S LED_RAW_TEST.elf  > "LED_RAW_TEST.list"
    text	   data	    bss	    dec	    hex	filename
-   4956	     92	   1900	   6948	   1b24	001NucleoProject.elf
+    728	      0	   1568	   2296	    8f8	LED_RAW_TEST.elf
 Finished building: default.size.stdout
  
-Finished building: 001NucleoProject.list
+Finished building: LED_RAW_TEST.list
  
-11:35:46 **** Incremental Build of configuration Debug for project 001NucleoProject ****
+16:09:51 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
 make -j11 all 
-arm-none-eabi-size  001NucleoProject.elf 
+arm-none-eabi-size  LED_RAW_TEST.elf 
    text	   data	    bss	    dec	    hex	filename
-   4956	     92	   1900	   6948	   1b24	001NucleoProject.elf
-Finished building: default.size.stdout
- 
-11:38:07 **** Incremental Build of configuration Debug for project 001NucleoProject ****
-make -j11 all 
-arm-none-eabi-size  001NucleoProject.elf 
-   text	   data	    bss	    dec	    hex	filename
-   4956	     92	   1900	   6948	   1b24	001NucleoProject.elf
+    728	      0	   1568	   2296	    8f8	LED_RAW_TEST.elf
 Finished building: default.size.stdout
  

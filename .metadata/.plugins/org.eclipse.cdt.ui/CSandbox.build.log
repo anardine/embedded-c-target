@@ -1,0 +1,15 @@
+20:21:44 **** Incremental Build of configuration Debug for project CSandbox ****
+make all 
+Building file: ../src/CSandbox.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/CSandbox.d" -MT"src/CSandbox.o" -o "src/CSandbox.o" "../src/CSandbox.c"
+Finished building: ../src/CSandbox.c
+ 
+Building target: CSandbox
+Invoking: Cross GCC Linker
+gcc  -o "CSandbox"  ./src/CSandbox.o   
+Finished building target: CSandbox
+ 
+
+20:21:45 Build Finished. 0 errors, 0 warnings. (took 999ms)
+
