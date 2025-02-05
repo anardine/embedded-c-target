@@ -51,10 +51,10 @@ int main(void)
 
 	while(1) {
 
-		if (iterator < 10000) {
+		if (iterator < 1000) {
 		*pGPIOA_DATA_OUT |= (1 << 5); // EN LD2
 
-		} else if (iterator >= 10000 && iterator < 100000) {
+		} else if (iterator >= 1000 && iterator < 2000) {
 		*pGPIOA_DATA_OUT &= ~(1 << 5); //OFF LD2
 
 		} else {
