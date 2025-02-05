@@ -51,11 +51,11 @@ int main(void)
 
 		*pGPIOA_DATA_OUT |= (1 << 5); // EN LD2
 
-		for (int i=0; i<=1000000; i++);
+		for (int i=0; i<=100000; i++);
 
 		*pGPIOA_DATA_OUT &= ~(1 << 5); //OFF LD2
 
-		for (int i=0; i<=1000000; i++);
+		for (int i=0; i<=100000; i++);
 
 
 	}

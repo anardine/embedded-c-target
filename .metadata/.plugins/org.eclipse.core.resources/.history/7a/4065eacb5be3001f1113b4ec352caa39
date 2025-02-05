@@ -47,17 +47,21 @@ int main(void)
 		//00000000000000|01|0000000000
 		//00000010101001|01|1000100101
 
+	 int16_t iterator = 0;
+
 	while(1) {
 
+		if (iterator < 10000) {
 		*pGPIOA_DATA_OUT |= (1 << 5); // EN LD2
 
-		for (int i=0; i<=1000000; i++);
-
+		} else if (iterator >= 10000 && iterator < 100000) {
 		*pGPIOA_DATA_OUT &= ~(1 << 5); //OFF LD2
 
-		for (int i=0; i<=1000000; i++);
+		} else {
+		iterator = 0;
 
-
+		}
+		iterator++;
 	}
 
 }

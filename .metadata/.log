@@ -986,3 +986,9 @@ java.lang.NullPointerException: Cannot invoke "org.eclipse.swt.widgets.Widget.ge
 
 !ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2025-02-04 21:45:58.932
 !MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2025-02-04 21:55:09.964
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 16000000; div: 8
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2025-02-04 21:55:39.555
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 16000000; div: 8

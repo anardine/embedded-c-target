@@ -1,10 +1,10 @@
-21:45:53 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
+21:55:35 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
 make -j11 all 
 arm-none-eabi-size  LED_RAW_TEST.elf 
    text	   data	    bss	    dec	    hex	filename
-    828	      0	   1568	   2396	    95c	LED_RAW_TEST.elf
+    824	      0	   1568	   2392	    958	LED_RAW_TEST.elf
 Finished building: default.size.stdout
  
 
-21:45:54 Build Finished. 0 errors, 0 warnings. (took 393ms)
+21:55:36 Build Finished. 0 errors, 0 warnings. (took 349ms)
 
