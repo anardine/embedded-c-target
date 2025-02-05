@@ -30,23 +30,7 @@ int main(void)
 	int32_t *pGPIOA_DATA_OUT = (int32_t *) 0x40020014; // Address for GPIOx_ODR
 
 
-	 *pGPIOA_CLK_EN & 1 ? 1 : (*pGPIOA_CLK_EN |= (1 << 0)); // check if RCC_AHB1ENR on GPIOA is enable, if not, enable it
-
-	 ((*pGPIOA_MODE_OUT >> 10) & 3) ? *pGPIOA_MODE_OUT &= ~(3 << 10) : (*pGPIOA_MODE_OUT |= (1 << 10)); // check if GPIOx_MODER on PA5 is enable, if not, enable it. If it is set to anything, we clear  to set
-
-		//(*pGPIOA_MODE_OUT >> 10) & 3
-		//000000101010010110001001|01| (*pGPIOA_MODE_OUT >> 10)
-		//000000000000000000000000|11| 3
-		//000000000000000000000000|01| (*pGPIOA_MODE_OUT >> 10) & 3
-
-		//00000010101001|01|1000100101
-		//11111111111111|00|1111111111 ~(3 << 10)
-		//00000010101001|00|1000100101
-
-		//00000010101001|00|1000100101 |
-		//00000000000000|01|0000000000
-		//00000010101001|01|1000100101
-
+	*pGPIOA_CLK_EN |= (1 << 0); // check if RCC_AHB1ENR on GPIOA is enable, if not, enable it
 	*pGPIOA_MODE_OUT |= (1 << 10); // check if GPIOx_MODER on PA5 is enable, if not, enable it
 
 	while(1) {
