@@ -26,8 +26,6 @@
 int main(void)
 {
 
-	uint8_t ledStatus = ON;
-
-	blinkLed(ledStatus);
+	blinkLed(int32_t const ledMode);
 
 }
