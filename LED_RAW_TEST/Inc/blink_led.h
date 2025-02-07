@@ -22,7 +22,7 @@ typedef enum {
 	OFF = 			0
 } boardLedStatus_e;
 
-extern uint8_t boardLedStatus;
+extern uint8_t boardLedStatus = OFF;
 
 void blinkLed(int32_t const ledMode);
 

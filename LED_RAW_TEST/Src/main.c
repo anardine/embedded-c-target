@@ -17,7 +17,8 @@
  */
 
 #include <stdint.h>
-#include "Inc/blink_led.h"
+#include "blink_led.h"
+#include "read_pin.h"
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -26,8 +27,9 @@
 int main(void)
 {
 
-	uint8_t ledStatus = ON;
+	while(1) {
 
-	blinkLed(ledStatus);
+	readPC0State();
 
+	}
 }

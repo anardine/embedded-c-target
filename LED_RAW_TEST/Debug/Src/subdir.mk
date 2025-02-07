@@ -5,17 +5,23 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Src/blink_led.c \
 ../Src/main.c \
+../Src/read_pin.c \
 ../Src/syscalls.c \
 ../Src/sysmem.c 
 
 OBJS += \
+./Src/blink_led.o \
 ./Src/main.o \
+./Src/read_pin.o \
 ./Src/syscalls.o \
 ./Src/sysmem.o 
 
 C_DEPS += \
+./Src/blink_led.d \
 ./Src/main.d \
+./Src/read_pin.d \
 ./Src/syscalls.d \
 ./Src/sysmem.d 
 
@@ -27,7 +33,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+	-$(RM) ./Src/blink_led.cyclo ./Src/blink_led.d ./Src/blink_led.o ./Src/blink_led.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/read_pin.cyclo ./Src/read_pin.d ./Src/read_pin.o ./Src/read_pin.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
 
 .PHONY: clean-Src
 

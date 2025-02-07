@@ -5,20 +5,20 @@
  *      Author: alessandro.nardinelli
  */
 
-uint8_t ledStatus = OFF;
+#include <stdint.h>
+#include "read_pin.h"
+#include "blink_led.h"
 
-void readPA2State(void) {
+void readPC0State(void) {
 
-	// check and enable read operation on GPIO A for PA2
+	// check and enable clock on GPIO C for PC0
+	*pGPIOC_CLK_EN & ~(1 << 2) ? 1 : *pGPIOC_CLK_EN |= (1 << 2);
 
+	// set mode to input in PC0 (input mode is two bits zeroed in first pos (/...00)
+	*pGPIOC_MODE_IN & (3 << 0) ? *pGPIOC_MODE_IN &= ~(3 << 0) : 1;
 
-	// read input data register on GPIO A for PA2 (high should turn the LED on and GND should turn off)
-
-	if (status is on) {
-
-		ledStatus = ON;
-
-	}
+	// read input data register on GPIO C for PC0 (high should turn the LED on and GND should turn off)
+	*pGPIOC_INDR & 1 ? ledStatus = ON : ledStatus = OFF;
 
 	blinkLed(ledStatus);
 
