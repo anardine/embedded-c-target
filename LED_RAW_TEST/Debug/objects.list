@@ -1,4 +1,5 @@
 "./Src/blink_led.o"
+"./Src/init.o"
 "./Src/main.o"
 "./Src/read_pin.o"
 "./Src/syscalls.o"

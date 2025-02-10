@@ -1,29 +1,44 @@
-11:41:46 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
+12:46:47 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
 make -j11 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/read_pin.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/read_pin.d" -MT"Src/read_pin.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/read_pin.o"
-In file included from ../Src/read_pin.c:10:
-../Inc/blink_led.h:25:16: warning: 'boardLedStatus' initialized and declared 'extern'
-   25 | extern uint8_t boardLedStatus = OFF;
+arm-none-eabi-gcc "../Src/blink_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/blink_led.d" -MT"Src/blink_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/blink_led.o"
+../Src/blink_led.c:8:2: warning: #import is a deprecated GCC extension [-Wdeprecated]
+    8 | #import "blink_led.h"
+      |  ^~~~~~
+In file included from ../Src/blink_led.c:9:
+../Inc/init.h:22:17: warning: 'pGPIOA_MODE_OUT' defined but not used [-Wunused-variable]
+   22 | static int32_t *pGPIOA_MODE_OUT = (int32_t *)   0x40020000; // Address for GPIOA_MODER
+      |                 ^~~~~~~~~~~~~~~
+../Inc/init.h:21:17: warning: 'pGPIOA_CLK_EN' defined but not used [-Wunused-variable]
+   21 | static int32_t *pGPIOA_CLK_EN = (int32_t *)     0x40023830; // address for RCC_ AHB1ENR
+      |                 ^~~~~~~~~~~~~
+../Inc/init.h:19:18: warning: 'pGPIOC_INDR' defined but not used [-Wunused-variable]
+   19 | static int32_t  *pGPIOC_INDR = (int32_t *)              0x40020810; // Address for GPIOC_IDR (input data register)
+      |                  ^~~~~~~~~~~
+../Inc/init.h:18:18: warning: 'pGPIOC_MODE_IN' defined but not used [-Wunused-variable]
+   18 | static int32_t  *pGPIOC_MODE_IN = (int32_t *)   0x40020800; // Address for GPIOC_MODER
+      |                  ^~~~~~~~~~~~~~
+../Inc/init.h:17:17: warning: 'pGPIOC_CLK_EN' defined but not used [-Wunused-variable]
+   17 | static int32_t *pGPIOC_CLK_EN = (int32_t *)     0x40023830; // address for RCC_ AHB1ENR
+      |                 ^~~~~~~~~~~~~
+In file included from ../Src/blink_led.c:8:
+../Inc/blink_led.h:21:16: warning: 'boardLedStatus' defined but not used [-Wunused-variable]
+   21 | static uint8_t boardLedStatus = OFF;
       |                ^~~~~~~~~~~~~~
-In file included from ../Src/main.c:20:
-../Inc/blink_led.h:25:16: warning: 'boardLedStatus' initialized and declared 'extern'
-   25 | extern uint8_t boardLedStatus = OFF;
-      |                ^~~~~~~~~~~~~~
-../Src/main.c:24:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
-   24 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-      |    ^~~~~~~
-../Src/read_pin.c: In function 'readPC0State':
-../Src/read_pin.c:15:57: error: lvalue required as left operand of assignment
-   15 |         *pGPIOC_CLK_EN & ~(1 << 2) ? 1 : *pGPIOC_CLK_EN |= (1 << 2);
-      |                                                         ^~
-../Src/read_pin.c:18:54: error: assignment of read-only location '*pGPIOC_MODE_IN'
-   18 |         *pGPIOC_MODE_IN & (3 << 0) ? *pGPIOC_MODE_IN &= ~(3 << 0) : 1;
-      |                                                      ^~
-../Src/read_pin.c:21:28: error: 'ledStatus' undeclared (first use in this function)
-   21 |         *pGPIOC_INDR & 1 ? ledStatus = ON : ledStatus = OFF;
-      |                            ^~~~~~~~~
-../Src/read_pin.c:21:28: note: each undeclared identifier is reported only once for each function it appears in
-make: *** [Src/subdir.mk:31: Src/read_pin.o] Error 1
-make: *** Waiting for unfinished jobs....
-"make -j11 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc -o "LED_RAW_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alessandro.nardinelli/Documents/Embedded-C/my_workspace/target/LED_RAW_TEST/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_RAW_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LED_RAW_TEST.elf
+ 
+arm-none-eabi-size  LED_RAW_TEST.elf 
+arm-none-eabi-objdump -h -S LED_RAW_TEST.elf  > "LED_RAW_TEST.list"
+   text	   data	    bss	    dec	    hex	filename
+   1060	     24	   1568	   2652	    a5c	LED_RAW_TEST.elf
+Finished building: default.size.stdout
+ 
+Finished building: LED_RAW_TEST.list
+ 
+12:46:51 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
+make -j11 all 
+arm-none-eabi-size  LED_RAW_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1060	     24	   1568	   2652	    a5c	LED_RAW_TEST.elf
+Finished building: default.size.stdout
+ 

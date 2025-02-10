@@ -1,0 +1,14 @@
+/*
+ * init.h
+ *
+ *  Created on: Feb 9, 2025
+ *      Author: alessandro.nardinelli
+ */
+
+#ifndef INIT_H_
+#define INIT_H_
+
+void init(void);
+
+
+#endif /* INIT_H_ */
