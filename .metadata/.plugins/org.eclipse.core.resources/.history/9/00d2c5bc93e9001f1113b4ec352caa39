@@ -11,7 +11,6 @@
 #define READ_PIN_H_
 
 #include <stdint.h>
-#include "blink_led.h"
 
 void readPC0State(void);
 

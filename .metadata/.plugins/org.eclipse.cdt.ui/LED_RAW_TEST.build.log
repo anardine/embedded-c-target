@@ -1,10 +1,22 @@
-21:12:17 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
+19:50:22 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
 make -j11 all 
+arm-none-eabi-gcc "../Src/init.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/init.d" -MT"Src/init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/init.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/read_pin.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/read_pin.d" -MT"Src/read_pin.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/read_pin.o"
+../Src/main.c:25:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   25 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+arm-none-eabi-gcc -o "LED_RAW_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alessandro.nardinelli/Documents/Embedded-C/my_workspace/target/LED_RAW_TEST/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_RAW_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: LED_RAW_TEST.elf
+ 
 arm-none-eabi-size  LED_RAW_TEST.elf 
+arm-none-eabi-objdump -h -S LED_RAW_TEST.elf  > "LED_RAW_TEST.list"
    text	   data	    bss	    dec	    hex	filename
-   1060	     24	   1568	   2652	    a5c	LED_RAW_TEST.elf
+   1004	      0	   1568	   2572	    a0c	LED_RAW_TEST.elf
 Finished building: default.size.stdout
  
+Finished building: LED_RAW_TEST.list
+ 
 
-21:12:18 Build Finished. 0 errors, 0 warnings. (took 232ms)
+19:50:23 Build Finished. 0 errors, 1 warnings. (took 1s.11ms)
 
