@@ -13,7 +13,6 @@
 #include <stdint.h>
 
 void readPC0State(void);
-
 uint8_t static volatile led = 0;
 
 

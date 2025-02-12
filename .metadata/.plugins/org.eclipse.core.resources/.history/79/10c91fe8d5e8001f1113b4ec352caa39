@@ -12,13 +12,10 @@
 
 void readPC0State(void) {
 
-	// for this to work properly, the pins MUST BE pulled low, having GND as reference all the time.
-
-	led = 0;
+	int8_t led = 0;
 
 	// read input data register on GPIO C for PC0 (high should turn the LED on and GND should turn off)
 	(*pGPIOC_INDR & (1 << 0)) ? (led = 1) : (led = 0);
-
 
 
 	blinkLed(led);

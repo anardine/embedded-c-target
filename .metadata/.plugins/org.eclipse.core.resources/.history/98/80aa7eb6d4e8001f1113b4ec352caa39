@@ -11,7 +11,7 @@
 void blinkLed(int32_t const ledMode) {
 
 
-	if (ledMode == 2) {
+	if (ledMode == AUTO_BLINK) {
 
 		*pGPIOA_DATA_OUT |= (1 << 5); // EN LD2
 		// Delay

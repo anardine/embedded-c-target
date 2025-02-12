@@ -27,25 +27,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  00002018  2**0
                   CONTENTS, READONLY
- 12 .debug_info   000005f6  00000000  00000000  00002048  2**0
+ 12 .debug_info   00000557  00000000  00000000  00002048  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 000002e9  00000000  00000000  0000263e  2**0
+ 13 .debug_abbrev 000002a8  00000000  00000000  0000259f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 000000a8  00000000  00000000  00002928  2**3
+ 14 .debug_aranges 000000a8  00000000  00000000  00002848  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_rnglists 00000067  00000000  00000000  000029d0  2**0
+ 15 .debug_rnglists 00000067  00000000  00000000  000028f0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00001107  00000000  00000000  00002a37  2**0
+ 16 .debug_macro  00001107  00000000  00000000  00002957  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00001065  00000000  00000000  00003b3e  2**0
+ 17 .debug_line   00001065  00000000  00000000  00003a5e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00003d21  00000000  00000000  00004ba3  2**0
+ 18 .debug_str    00003d07  00000000  00000000  00004ac3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  000088c4  2**0
+ 19 .comment      00000043  00000000  00000000  000087ca  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000000ec  00000000  00000000  00008908  2**2
+ 20 .debug_frame  000000ec  00000000  00000000  00008810  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000007c  00000000  00000000  000089f4  2**0
+ 21 .debug_line_str 0000007c  00000000  00000000  000088fc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -91,16 +91,16 @@ void blinkLed(int32_t const ledMode) {
  80001de:	6078      	str	r0, [r7, #4]
 
 
-	if (ledMode == AUTO_BLINK) {
+	if (ledMode == 2) {
  80001e0:	687b      	ldr	r3, [r7, #4]
  80001e2:	2b02      	cmp	r3, #2
  80001e4:	d124      	bne.n	8000230 <blinkLed+0x58>
 
 		*pGPIOA_DATA_OUT |= (1 << 5); // EN LD2
- 80001e6:	4b21      	ldr	r3, [pc, #132]	@ (800026c <blinkLed+0x94>)
+ 80001e6:	4b1f      	ldr	r3, [pc, #124]	@ (8000264 <blinkLed+0x8c>)
  80001e8:	681b      	ldr	r3, [r3, #0]
  80001ea:	681a      	ldr	r2, [r3, #0]
- 80001ec:	4b1f      	ldr	r3, [pc, #124]	@ (800026c <blinkLed+0x94>)
+ 80001ec:	4b1d      	ldr	r3, [pc, #116]	@ (8000264 <blinkLed+0x8c>)
  80001ee:	681b      	ldr	r3, [r3, #0]
  80001f0:	f042 0220 	orr.w	r2, r2, #32
  80001f4:	601a      	str	r2, [r3, #0]
@@ -113,14 +113,14 @@ void blinkLed(int32_t const ledMode) {
  80001fe:	3301      	adds	r3, #1
  8000200:	60fb      	str	r3, [r7, #12]
  8000202:	68fb      	ldr	r3, [r7, #12]
- 8000204:	4a1a      	ldr	r2, [pc, #104]	@ (8000270 <blinkLed+0x98>)
+ 8000204:	4a18      	ldr	r2, [pc, #96]	@ (8000268 <blinkLed+0x90>)
  8000206:	4293      	cmp	r3, r2
  8000208:	ddf8      	ble.n	80001fc <blinkLed+0x24>
 		*pGPIOA_DATA_OUT &= ~(1 << 5); //OFF LD2
- 800020a:	4b18      	ldr	r3, [pc, #96]	@ (800026c <blinkLed+0x94>)
+ 800020a:	4b16      	ldr	r3, [pc, #88]	@ (8000264 <blinkLed+0x8c>)
  800020c:	681b      	ldr	r3, [r3, #0]
  800020e:	681a      	ldr	r2, [r3, #0]
- 8000210:	4b16      	ldr	r3, [pc, #88]	@ (800026c <blinkLed+0x94>)
+ 8000210:	4b14      	ldr	r3, [pc, #80]	@ (8000264 <blinkLed+0x8c>)
  8000212:	681b      	ldr	r3, [r3, #0]
  8000214:	f022 0220 	bic.w	r2, r2, #32
  8000218:	601a      	str	r2, [r3, #0]
@@ -133,197 +133,199 @@ void blinkLed(int32_t const ledMode) {
  8000222:	3301      	adds	r3, #1
  8000224:	60bb      	str	r3, [r7, #8]
  8000226:	68bb      	ldr	r3, [r7, #8]
- 8000228:	4a11      	ldr	r2, [pc, #68]	@ (8000270 <blinkLed+0x98>)
+ 8000228:	4a0f      	ldr	r2, [pc, #60]	@ (8000268 <blinkLed+0x90>)
  800022a:	4293      	cmp	r3, r2
  800022c:	ddf8      	ble.n	8000220 <blinkLed+0x48>
 
-	} else if (ledMode == OFF) {
+	} else {
 
 		*pGPIOA_DATA_OUT &= ~(1 << 5); //OFF LD2
 	}
 }
- 800022e:	e016      	b.n	800025e <blinkLed+0x86>
-	} else if (ledMode == ON) {
+ 800022e:	e013      	b.n	8000258 <blinkLed+0x80>
+	} else if (ledMode == 1) {
  8000230:	687b      	ldr	r3, [r7, #4]
  8000232:	2b01      	cmp	r3, #1
  8000234:	d108      	bne.n	8000248 <blinkLed+0x70>
 		*pGPIOA_DATA_OUT |= (1 << 5); // EN LD2
- 8000236:	4b0d      	ldr	r3, [pc, #52]	@ (800026c <blinkLed+0x94>)
+ 8000236:	4b0b      	ldr	r3, [pc, #44]	@ (8000264 <blinkLed+0x8c>)
  8000238:	681b      	ldr	r3, [r3, #0]
  800023a:	681a      	ldr	r2, [r3, #0]
- 800023c:	4b0b      	ldr	r3, [pc, #44]	@ (800026c <blinkLed+0x94>)
+ 800023c:	4b09      	ldr	r3, [pc, #36]	@ (8000264 <blinkLed+0x8c>)
  800023e:	681b      	ldr	r3, [r3, #0]
  8000240:	f042 0220 	orr.w	r2, r2, #32
  8000244:	601a      	str	r2, [r3, #0]
 }
- 8000246:	e00a      	b.n	800025e <blinkLed+0x86>
-	} else if (ledMode == OFF) {
- 8000248:	687b      	ldr	r3, [r7, #4]
- 800024a:	2b00      	cmp	r3, #0
- 800024c:	d107      	bne.n	800025e <blinkLed+0x86>
+ 8000246:	e007      	b.n	8000258 <blinkLed+0x80>
 		*pGPIOA_DATA_OUT &= ~(1 << 5); //OFF LD2
- 800024e:	4b07      	ldr	r3, [pc, #28]	@ (800026c <blinkLed+0x94>)
+ 8000248:	4b06      	ldr	r3, [pc, #24]	@ (8000264 <blinkLed+0x8c>)
+ 800024a:	681b      	ldr	r3, [r3, #0]
+ 800024c:	681a      	ldr	r2, [r3, #0]
+ 800024e:	4b05      	ldr	r3, [pc, #20]	@ (8000264 <blinkLed+0x8c>)
  8000250:	681b      	ldr	r3, [r3, #0]
- 8000252:	681a      	ldr	r2, [r3, #0]
- 8000254:	4b05      	ldr	r3, [pc, #20]	@ (800026c <blinkLed+0x94>)
- 8000256:	681b      	ldr	r3, [r3, #0]
- 8000258:	f022 0220 	bic.w	r2, r2, #32
- 800025c:	601a      	str	r2, [r3, #0]
+ 8000252:	f022 0220 	bic.w	r2, r2, #32
+ 8000256:	601a      	str	r2, [r3, #0]
 }
- 800025e:	bf00      	nop
- 8000260:	3714      	adds	r7, #20
- 8000262:	46bd      	mov	sp, r7
- 8000264:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8000268:	4770      	bx	lr
- 800026a:	bf00      	nop
- 800026c:	20000000 	.word	0x20000000
- 8000270:	000f4240 	.word	0x000f4240
+ 8000258:	bf00      	nop
+ 800025a:	3714      	adds	r7, #20
+ 800025c:	46bd      	mov	sp, r7
+ 800025e:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8000262:	4770      	bx	lr
+ 8000264:	20000000 	.word	0x20000000
+ 8000268:	000f4240 	.word	0x000f4240
 
-08000274 <init>:
+0800026c <init>:
 
 #include "init.h"
 #include "blink_led.h"
 #include "read_pin.h"
 
 void init(void) {
- 8000274:	b480      	push	{r7}
- 8000276:	af00      	add	r7, sp, #0
+ 800026c:	b480      	push	{r7}
+ 800026e:	af00      	add	r7, sp, #0
 
 	// PIN GPIO A INIT
 	// check if RCC_AHB1ENR on GPIOA is enable, if not, enable it
 	*pGPIOA_CLK_EN & (1 << 0) ? 1 : (*pGPIOA_CLK_EN |= (1 << 0));
- 8000278:	4b25      	ldr	r3, [pc, #148]	@ (8000310 <init+0x9c>)
- 800027a:	681b      	ldr	r3, [r3, #0]
- 800027c:	681b      	ldr	r3, [r3, #0]
- 800027e:	f003 0301 	and.w	r3, r3, #1
- 8000282:	2b00      	cmp	r3, #0
- 8000284:	d107      	bne.n	8000296 <init+0x22>
- 8000286:	4b22      	ldr	r3, [pc, #136]	@ (8000310 <init+0x9c>)
- 8000288:	681b      	ldr	r3, [r3, #0]
- 800028a:	681a      	ldr	r2, [r3, #0]
- 800028c:	4b20      	ldr	r3, [pc, #128]	@ (8000310 <init+0x9c>)
- 800028e:	681b      	ldr	r3, [r3, #0]
- 8000290:	f042 0201 	orr.w	r2, r2, #1
- 8000294:	601a      	str	r2, [r3, #0]
+ 8000270:	4b25      	ldr	r3, [pc, #148]	@ (8000308 <init+0x9c>)
+ 8000272:	681b      	ldr	r3, [r3, #0]
+ 8000274:	681b      	ldr	r3, [r3, #0]
+ 8000276:	f003 0301 	and.w	r3, r3, #1
+ 800027a:	2b00      	cmp	r3, #0
+ 800027c:	d107      	bne.n	800028e <init+0x22>
+ 800027e:	4b22      	ldr	r3, [pc, #136]	@ (8000308 <init+0x9c>)
+ 8000280:	681b      	ldr	r3, [r3, #0]
+ 8000282:	681a      	ldr	r2, [r3, #0]
+ 8000284:	4b20      	ldr	r3, [pc, #128]	@ (8000308 <init+0x9c>)
+ 8000286:	681b      	ldr	r3, [r3, #0]
+ 8000288:	f042 0201 	orr.w	r2, r2, #1
+ 800028c:	601a      	str	r2, [r3, #0]
 
 	// check if GPIOx_MODER on PA5 is enable, if not, enable it. If it is set to anything, we clear  to set
 	((*pGPIOA_MODE_OUT >> 10) & (3 << 0)) ? *pGPIOA_MODE_OUT &= ~(3 << 10) : (*pGPIOA_MODE_OUT |= (1 << 10));
- 8000296:	4b1f      	ldr	r3, [pc, #124]	@ (8000314 <init+0xa0>)
- 8000298:	681b      	ldr	r3, [r3, #0]
- 800029a:	681b      	ldr	r3, [r3, #0]
- 800029c:	129b      	asrs	r3, r3, #10
- 800029e:	f003 0303 	and.w	r3, r3, #3
- 80002a2:	2b00      	cmp	r3, #0
- 80002a4:	d008      	beq.n	80002b8 <init+0x44>
- 80002a6:	4b1b      	ldr	r3, [pc, #108]	@ (8000314 <init+0xa0>)
- 80002a8:	681b      	ldr	r3, [r3, #0]
- 80002aa:	681a      	ldr	r2, [r3, #0]
- 80002ac:	4b19      	ldr	r3, [pc, #100]	@ (8000314 <init+0xa0>)
- 80002ae:	681b      	ldr	r3, [r3, #0]
- 80002b0:	f422 6240 	bic.w	r2, r2, #3072	@ 0xc00
- 80002b4:	601a      	str	r2, [r3, #0]
- 80002b6:	e007      	b.n	80002c8 <init+0x54>
- 80002b8:	4b16      	ldr	r3, [pc, #88]	@ (8000314 <init+0xa0>)
- 80002ba:	681b      	ldr	r3, [r3, #0]
- 80002bc:	681a      	ldr	r2, [r3, #0]
- 80002be:	4b15      	ldr	r3, [pc, #84]	@ (8000314 <init+0xa0>)
- 80002c0:	681b      	ldr	r3, [r3, #0]
- 80002c2:	f442 6280 	orr.w	r2, r2, #1024	@ 0x400
- 80002c6:	601a      	str	r2, [r3, #0]
+ 800028e:	4b1f      	ldr	r3, [pc, #124]	@ (800030c <init+0xa0>)
+ 8000290:	681b      	ldr	r3, [r3, #0]
+ 8000292:	681b      	ldr	r3, [r3, #0]
+ 8000294:	129b      	asrs	r3, r3, #10
+ 8000296:	f003 0303 	and.w	r3, r3, #3
+ 800029a:	2b00      	cmp	r3, #0
+ 800029c:	d008      	beq.n	80002b0 <init+0x44>
+ 800029e:	4b1b      	ldr	r3, [pc, #108]	@ (800030c <init+0xa0>)
+ 80002a0:	681b      	ldr	r3, [r3, #0]
+ 80002a2:	681a      	ldr	r2, [r3, #0]
+ 80002a4:	4b19      	ldr	r3, [pc, #100]	@ (800030c <init+0xa0>)
+ 80002a6:	681b      	ldr	r3, [r3, #0]
+ 80002a8:	f422 6240 	bic.w	r2, r2, #3072	@ 0xc00
+ 80002ac:	601a      	str	r2, [r3, #0]
+ 80002ae:	e007      	b.n	80002c0 <init+0x54>
+ 80002b0:	4b16      	ldr	r3, [pc, #88]	@ (800030c <init+0xa0>)
+ 80002b2:	681b      	ldr	r3, [r3, #0]
+ 80002b4:	681a      	ldr	r2, [r3, #0]
+ 80002b6:	4b15      	ldr	r3, [pc, #84]	@ (800030c <init+0xa0>)
+ 80002b8:	681b      	ldr	r3, [r3, #0]
+ 80002ba:	f442 6280 	orr.w	r2, r2, #1024	@ 0x400
+ 80002be:	601a      	str	r2, [r3, #0]
 
 
 	// PIN GPIO C INIT
 	// check and enable clock on GPIO C for PC0
 	*pGPIOC_CLK_EN & (1 << 2) ? 1 : (*pGPIOC_CLK_EN |= (1 << 2));
- 80002c8:	4b13      	ldr	r3, [pc, #76]	@ (8000318 <init+0xa4>)
- 80002ca:	681b      	ldr	r3, [r3, #0]
- 80002cc:	681b      	ldr	r3, [r3, #0]
- 80002ce:	f003 0304 	and.w	r3, r3, #4
- 80002d2:	2b00      	cmp	r3, #0
- 80002d4:	d107      	bne.n	80002e6 <init+0x72>
- 80002d6:	4b10      	ldr	r3, [pc, #64]	@ (8000318 <init+0xa4>)
- 80002d8:	681b      	ldr	r3, [r3, #0]
- 80002da:	681a      	ldr	r2, [r3, #0]
- 80002dc:	4b0e      	ldr	r3, [pc, #56]	@ (8000318 <init+0xa4>)
- 80002de:	681b      	ldr	r3, [r3, #0]
- 80002e0:	f042 0204 	orr.w	r2, r2, #4
- 80002e4:	601a      	str	r2, [r3, #0]
+ 80002c0:	4b13      	ldr	r3, [pc, #76]	@ (8000310 <init+0xa4>)
+ 80002c2:	681b      	ldr	r3, [r3, #0]
+ 80002c4:	681b      	ldr	r3, [r3, #0]
+ 80002c6:	f003 0304 	and.w	r3, r3, #4
+ 80002ca:	2b00      	cmp	r3, #0
+ 80002cc:	d107      	bne.n	80002de <init+0x72>
+ 80002ce:	4b10      	ldr	r3, [pc, #64]	@ (8000310 <init+0xa4>)
+ 80002d0:	681b      	ldr	r3, [r3, #0]
+ 80002d2:	681a      	ldr	r2, [r3, #0]
+ 80002d4:	4b0e      	ldr	r3, [pc, #56]	@ (8000310 <init+0xa4>)
+ 80002d6:	681b      	ldr	r3, [r3, #0]
+ 80002d8:	f042 0204 	orr.w	r2, r2, #4
+ 80002dc:	601a      	str	r2, [r3, #0]
 
 	// set mode to input in PC0 (input mode is two bits zeroed in first pos (/...00)
 	*pGPIOC_MODE_IN & (3 << 0) ? (*pGPIOC_MODE_IN &= ~(3 << 0)) : 1;
- 80002e6:	4b0d      	ldr	r3, [pc, #52]	@ (800031c <init+0xa8>)
- 80002e8:	681b      	ldr	r3, [r3, #0]
- 80002ea:	681b      	ldr	r3, [r3, #0]
- 80002ec:	f003 0303 	and.w	r3, r3, #3
- 80002f0:	2b00      	cmp	r3, #0
- 80002f2:	d007      	beq.n	8000304 <init+0x90>
- 80002f4:	4b09      	ldr	r3, [pc, #36]	@ (800031c <init+0xa8>)
- 80002f6:	681b      	ldr	r3, [r3, #0]
- 80002f8:	681a      	ldr	r2, [r3, #0]
- 80002fa:	4b08      	ldr	r3, [pc, #32]	@ (800031c <init+0xa8>)
- 80002fc:	681b      	ldr	r3, [r3, #0]
- 80002fe:	f022 0203 	bic.w	r2, r2, #3
- 8000302:	601a      	str	r2, [r3, #0]
+ 80002de:	4b0d      	ldr	r3, [pc, #52]	@ (8000314 <init+0xa8>)
+ 80002e0:	681b      	ldr	r3, [r3, #0]
+ 80002e2:	681b      	ldr	r3, [r3, #0]
+ 80002e4:	f003 0303 	and.w	r3, r3, #3
+ 80002e8:	2b00      	cmp	r3, #0
+ 80002ea:	d007      	beq.n	80002fc <init+0x90>
+ 80002ec:	4b09      	ldr	r3, [pc, #36]	@ (8000314 <init+0xa8>)
+ 80002ee:	681b      	ldr	r3, [r3, #0]
+ 80002f0:	681a      	ldr	r2, [r3, #0]
+ 80002f2:	4b08      	ldr	r3, [pc, #32]	@ (8000314 <init+0xa8>)
+ 80002f4:	681b      	ldr	r3, [r3, #0]
+ 80002f6:	f022 0203 	bic.w	r2, r2, #3
+ 80002fa:	601a      	str	r2, [r3, #0]
 }
- 8000304:	bf00      	nop
- 8000306:	46bd      	mov	sp, r7
- 8000308:	f85d 7b04 	ldr.w	r7, [sp], #4
- 800030c:	4770      	bx	lr
- 800030e:	bf00      	nop
- 8000310:	2000000c 	.word	0x2000000c
- 8000314:	20000010 	.word	0x20000010
- 8000318:	20000004 	.word	0x20000004
- 800031c:	20000008 	.word	0x20000008
+ 80002fc:	bf00      	nop
+ 80002fe:	46bd      	mov	sp, r7
+ 8000300:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8000304:	4770      	bx	lr
+ 8000306:	bf00      	nop
+ 8000308:	2000000c 	.word	0x2000000c
+ 800030c:	20000010 	.word	0x20000010
+ 8000310:	20000004 	.word	0x20000004
+ 8000314:	20000008 	.word	0x20000008
 
-08000320 <main>:
+08000318 <main>:
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
 int main(void)
 {
- 8000320:	b580      	push	{r7, lr}
- 8000322:	af00      	add	r7, sp, #0
+ 8000318:	b580      	push	{r7, lr}
+ 800031a:	af00      	add	r7, sp, #0
 
 	init();
- 8000324:	f7ff ffa6 	bl	8000274 <init>
+ 800031c:	f7ff ffa6 	bl	800026c <init>
 
 	while(1) {
 
 	readPC0State();
- 8000328:	f000 f802 	bl	8000330 <readPC0State>
- 800032c:	e7fc      	b.n	8000328 <main+0x8>
+ 8000320:	f000 f802 	bl	8000328 <readPC0State>
+ 8000324:	e7fc      	b.n	8000320 <main+0x8>
 	...
 
-08000330 <readPC0State>:
+08000328 <readPC0State>:
 #include <stdint.h>
 #include "read_pin.h"
 #include "blink_led.h"
 #include "init.h"
 
 void readPC0State(void) {
- 8000330:	b580      	push	{r7, lr}
- 8000332:	af00      	add	r7, sp, #0
+ 8000328:	b580      	push	{r7, lr}
+ 800032a:	af00      	add	r7, sp, #0
+
+	led = 0;
+ 800032c:	4b0c      	ldr	r3, [pc, #48]	@ (8000360 <readPC0State+0x38>)
+ 800032e:	2200      	movs	r2, #0
+ 8000330:	701a      	strb	r2, [r3, #0]
 
 	// read input data register on GPIO C for PC0 (high should turn the LED on and GND should turn off)
-	*pGPIOC_INDR & (1 << 0) ? (boardLedStatus = ON) : (boardLedStatus = OFF);
- 8000334:	4b0a      	ldr	r3, [pc, #40]	@ (8000360 <readPC0State+0x30>)
+	(*pGPIOC_INDR & (1 << 0)) ? (led = 1) : (led = 0);
+ 8000332:	4b0c      	ldr	r3, [pc, #48]	@ (8000364 <readPC0State+0x3c>)
+ 8000334:	681b      	ldr	r3, [r3, #0]
  8000336:	681b      	ldr	r3, [r3, #0]
- 8000338:	681b      	ldr	r3, [r3, #0]
- 800033a:	f003 0301 	and.w	r3, r3, #1
- 800033e:	2b00      	cmp	r3, #0
- 8000340:	d003      	beq.n	800034a <readPC0State+0x1a>
- 8000342:	4b08      	ldr	r3, [pc, #32]	@ (8000364 <readPC0State+0x34>)
- 8000344:	2201      	movs	r2, #1
- 8000346:	701a      	strb	r2, [r3, #0]
- 8000348:	e002      	b.n	8000350 <readPC0State+0x20>
- 800034a:	4b06      	ldr	r3, [pc, #24]	@ (8000364 <readPC0State+0x34>)
- 800034c:	2200      	movs	r2, #0
- 800034e:	701a      	strb	r2, [r3, #0]
+ 8000338:	f003 0301 	and.w	r3, r3, #1
+ 800033c:	2b00      	cmp	r3, #0
+ 800033e:	d003      	beq.n	8000348 <readPC0State+0x20>
+ 8000340:	4b07      	ldr	r3, [pc, #28]	@ (8000360 <readPC0State+0x38>)
+ 8000342:	2201      	movs	r2, #1
+ 8000344:	701a      	strb	r2, [r3, #0]
+ 8000346:	e002      	b.n	800034e <readPC0State+0x26>
+ 8000348:	4b05      	ldr	r3, [pc, #20]	@ (8000360 <readPC0State+0x38>)
+ 800034a:	2200      	movs	r2, #0
+ 800034c:	701a      	strb	r2, [r3, #0]
 
-	blinkLed(boardLedStatus);
- 8000350:	4b04      	ldr	r3, [pc, #16]	@ (8000364 <readPC0State+0x34>)
- 8000352:	781b      	ldrb	r3, [r3, #0]
+
+	blinkLed(led);
+ 800034e:	4b04      	ldr	r3, [pc, #16]	@ (8000360 <readPC0State+0x38>)
+ 8000350:	781b      	ldrb	r3, [r3, #0]
+ 8000352:	b2db      	uxtb	r3, r3
  8000354:	4618      	mov	r0, r3
  8000356:	f7ff ff3f 	bl	80001d8 <blinkLed>
 
@@ -331,8 +333,8 @@ void readPC0State(void) {
  800035a:	bf00      	nop
  800035c:	bd80      	pop	{r7, pc}
  800035e:	bf00      	nop
- 8000360:	20000014 	.word	0x20000014
- 8000364:	20000034 	.word	0x20000034
+ 8000360:	20000034 	.word	0x20000034
+ 8000364:	20000014 	.word	0x20000014
 
 08000368 <Reset_Handler>:
 
@@ -411,7 +413,7 @@ LoopFillZerobss:
  8000396:	f000 f811 	bl	80003bc <__libc_init_array>
 /* Call the application's entry point.*/
   bl main
- 800039a:	f7ff ffc1 	bl	8000320 <main>
+ 800039a:	f7ff ffbd 	bl	8000318 <main>
 
 0800039e <LoopForever>:
 

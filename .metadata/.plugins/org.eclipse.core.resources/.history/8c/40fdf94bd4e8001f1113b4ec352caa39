@@ -12,11 +12,13 @@
 
 #include <stdint.h>
 
-//typedef enum {
-//	AUTO_BLINK = 	(1 << 1),
-//	ON = 			(1 << 0),
-//	OFF = 			0
-//} boardLedStatus_e;
+typedef enum {
+	AUTO_BLINK = 	(1 << 1),
+	ON = 			(1 << 0),
+	OFF = 			0
+} boardLedStatus_e;
+
+static uint8_t boardLedStatus = OFF;
 
 void blinkLed(int32_t const ledMode);
 

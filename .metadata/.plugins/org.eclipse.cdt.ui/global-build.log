@@ -1,29 +1,53 @@
-12:46:47 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
+21:12:12 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
 make -j11 all 
-arm-none-eabi-gcc "../Src/blink_led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/blink_led.d" -MT"Src/blink_led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/blink_led.o"
-../Src/blink_led.c:8:2: warning: #import is a deprecated GCC extension [-Wdeprecated]
-    8 | #import "blink_led.h"
-      |  ^~~~~~
-In file included from ../Src/blink_led.c:9:
-../Inc/init.h:22:17: warning: 'pGPIOA_MODE_OUT' defined but not used [-Wunused-variable]
-   22 | static int32_t *pGPIOA_MODE_OUT = (int32_t *)   0x40020000; // Address for GPIOA_MODER
-      |                 ^~~~~~~~~~~~~~~
-../Inc/init.h:21:17: warning: 'pGPIOA_CLK_EN' defined but not used [-Wunused-variable]
-   21 | static int32_t *pGPIOA_CLK_EN = (int32_t *)     0x40023830; // address for RCC_ AHB1ENR
-      |                 ^~~~~~~~~~~~~
-../Inc/init.h:19:18: warning: 'pGPIOC_INDR' defined but not used [-Wunused-variable]
-   19 | static int32_t  *pGPIOC_INDR = (int32_t *)              0x40020810; // Address for GPIOC_IDR (input data register)
-      |                  ^~~~~~~~~~~
-../Inc/init.h:18:18: warning: 'pGPIOC_MODE_IN' defined but not used [-Wunused-variable]
-   18 | static int32_t  *pGPIOC_MODE_IN = (int32_t *)   0x40020800; // Address for GPIOC_MODER
-      |                  ^~~~~~~~~~~~~~
-../Inc/init.h:17:17: warning: 'pGPIOC_CLK_EN' defined but not used [-Wunused-variable]
-   17 | static int32_t *pGPIOC_CLK_EN = (int32_t *)     0x40023830; // address for RCC_ AHB1ENR
-      |                 ^~~~~~~~~~~~~
-In file included from ../Src/blink_led.c:8:
-../Inc/blink_led.h:21:16: warning: 'boardLedStatus' defined but not used [-Wunused-variable]
-   21 | static uint8_t boardLedStatus = OFF;
-      |                ^~~~~~~~~~~~~~
+arm-none-eabi-gcc "../Src/init.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/init.d" -MT"Src/init.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/init.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/read_pin.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/read_pin.d" -MT"Src/read_pin.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/read_pin.o"
+../Src/main.c:25:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+   25 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+In file included from ../Src/main.c:22:
+../Inc/init.h:23:26: warning: 'pGPIOA_DATA_OUT' defined but not used [-Wunused-variable]
+   23 | static volatile int32_t *pGPIOA_DATA_OUT = (int32_t *)  0x40020014; // Address for GPIOA_ODR (output data register)
+      |                          ^~~~~~~~~~~~~~~
+../Inc/init.h:22:26: warning: 'pGPIOA_MODE_OUT' defined but not used [-Wunused-variable]
+   22 | static volatile int32_t *pGPIOA_MODE_OUT = (int32_t *)  0x40020000; // Address for GPIOA_MODER
+      |                          ^~~~~~~~~~~~~~~
+../Inc/init.h:21:26: warning: 'pGPIOA_CLK_EN' defined but not used [-Wunused-variable]
+   21 | static volatile int32_t *pGPIOA_CLK_EN = (int32_t *)    0x40023830; // address for RCC_ AHB1ENR
+      |                          ^~~~~~~~~~~~~
+../Inc/init.h:19:27: warning: 'pGPIOC_INDR' defined but not used [-Wunused-variable]
+   19 | static volatile int32_t  *pGPIOC_INDR = (int32_t *)             0x40020810; // Address for GPIOC_IDR (input data register)
+      |                           ^~~~~~~~~~~
+../Inc/init.h:18:27: warning: 'pGPIOC_MODE_IN' defined but not used [-Wunused-variable]
+   18 | static volatile int32_t  *pGPIOC_MODE_IN = (int32_t *)  0x40020800; // Address for GPIOC_MODER
+      |                           ^~~~~~~~~~~~~~
+../Inc/init.h:17:26: warning: 'pGPIOC_CLK_EN' defined but not used [-Wunused-variable]
+   17 | static volatile int32_t *pGPIOC_CLK_EN = (int32_t *)    0x40023830; // address for RCC_ AHB1ENR
+      |                          ^~~~~~~~~~~~~
+In file included from ../Src/read_pin.c:11:
+../Inc/init.h:23:26: warning: 'pGPIOA_DATA_OUT' defined but not used [-Wunused-variable]
+   23 | static volatile int32_t *pGPIOA_DATA_OUT = (int32_t *)  0x40020014; // Address for GPIOA_ODR (output data register)
+      |                          ^~~~~~~~~~~~~~~
+../Inc/init.h:22:26: warning: 'pGPIOA_MODE_OUT' defined but not used [-Wunused-variable]
+   22 | static volatile int32_t *pGPIOA_MODE_OUT = (int32_t *)  0x40020000; // Address for GPIOA_MODER
+      |                          ^~~~~~~~~~~~~~~
+../Inc/init.h:21:26: warning: 'pGPIOA_CLK_EN' defined but not used [-Wunused-variable]
+   21 | static volatile int32_t *pGPIOA_CLK_EN = (int32_t *)    0x40023830; // address for RCC_ AHB1ENR
+      |                          ^~~~~~~~~~~~~
+../Inc/init.h:18:27: warning: 'pGPIOC_MODE_IN' defined but not used [-Wunused-variable]
+   18 | static volatile int32_t  *pGPIOC_MODE_IN = (int32_t *)  0x40020800; // Address for GPIOC_MODER
+      |                           ^~~~~~~~~~~~~~
+../Inc/init.h:17:26: warning: 'pGPIOC_CLK_EN' defined but not used [-Wunused-variable]
+   17 | static volatile int32_t *pGPIOC_CLK_EN = (int32_t *)    0x40023830; // address for RCC_ AHB1ENR
+      |                          ^~~~~~~~~~~~~
+In file included from ../Src/init.c:8:
+../Inc/init.h:23:26: warning: 'pGPIOA_DATA_OUT' defined but not used [-Wunused-variable]
+   23 | static volatile int32_t *pGPIOA_DATA_OUT = (int32_t *)  0x40020014; // Address for GPIOA_ODR (output data register)
+      |                          ^~~~~~~~~~~~~~~
+../Inc/init.h:19:27: warning: 'pGPIOC_INDR' defined but not used [-Wunused-variable]
+   19 | static volatile int32_t  *pGPIOC_INDR = (int32_t *)             0x40020810; // Address for GPIOC_IDR (input data register)
+      |                           ^~~~~~~~~~~
 arm-none-eabi-gcc -o "LED_RAW_TEST.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alessandro.nardinelli/Documents/Embedded-C/my_workspace/target/LED_RAW_TEST/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LED_RAW_TEST.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: LED_RAW_TEST.elf
  
@@ -35,7 +59,7 @@ Finished building: default.size.stdout
  
 Finished building: LED_RAW_TEST.list
  
-12:46:51 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
+21:12:17 **** Incremental Build of configuration Debug for project LED_RAW_TEST ****
 make -j11 all 
 arm-none-eabi-size  LED_RAW_TEST.elf 
    text	   data	    bss	    dec	    hex	filename
