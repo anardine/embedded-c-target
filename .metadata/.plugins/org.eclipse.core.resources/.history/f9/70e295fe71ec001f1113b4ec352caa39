@@ -12,14 +12,13 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include "input.h"
-#include "decoder.h"
 
 int main(void) {
 
 
-	int32_t collected32bitData = collectInput();
+	collectInput();
 
-	decoder(collected32bitData);
+
 
 	getchar();
 	return EXIT_SUCCESS;
