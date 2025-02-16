@@ -26,7 +26,7 @@ Message_t decoder(int32_t const inputMessage) {
 	printf("value of decodedMessage.crc: %X \n",decodedMessage.crc);
 
 	//extract and save status:
-	decodedMessage.status = ((*p >> 2) & (1 << 0));
+	decodedMessage.status = ((*p >> 1) & (1 << 0));
 	printf("value of decodedMessage.status: %X \n",decodedMessage.status);
 
 	//extract and save payload:

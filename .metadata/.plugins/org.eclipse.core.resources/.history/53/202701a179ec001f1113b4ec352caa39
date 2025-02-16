@@ -12,14 +12,14 @@
 
 typedef struct  {
 
-	int32_t crc			:2;
-	int32_t status		:1;
-	int32_t payload		:12;
-	int32_t bat			:3;
-	int32_t sensor		:3;
-	int32_t longAddr	:8;
-	int32_t shortAddr	:2;
-	int32_t addrMode	:1;
+	char crc;
+	char status;
+	int16_t payload;
+	char bat;
+	char sensor;
+	int8_t longAddr;
+	char shortAddr;
+	char addrMode;
 
 } Message_t;
 

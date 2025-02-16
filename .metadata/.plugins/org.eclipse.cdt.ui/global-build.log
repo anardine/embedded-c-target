@@ -1,4 +1,4 @@
-12:00:16 **** Incremental Build of configuration Release for project decoder2 ****
+12:25:53 **** Incremental Build of configuration Release for project decoder2 ****
 make all 
 Building file: ../src/decoder.c
 Invoking: GCC C Compiler
