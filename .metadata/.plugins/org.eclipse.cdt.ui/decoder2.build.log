@@ -10,3 +10,6 @@ Invoking: MacOS X C Linker
 gcc  -o "decoder2"  ./src/decoder2.o   
 Finished building target: decoder2
  
+
+10:37:26 Build Finished. 0 errors, 0 warnings. (took 1s.62ms)
+
