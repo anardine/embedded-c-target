@@ -1,15 +1,15 @@
-10:37:25 **** Incremental Build of configuration Release for project decoder2 ****
+11:17:42 **** Incremental Build of configuration Release for project decoder2 ****
 make all 
-Building file: ../src/decoder2.c
+Building file: ../src/input.c
 Invoking: GCC C Compiler
-gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/decoder2.d" -MT"src/decoder2.o" -o "src/decoder2.o" "../src/decoder2.c"
-Finished building: ../src/decoder2.c
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/input.d" -MT"src/input.o" -o "src/input.o" "../src/input.c"
+Finished building: ../src/input.c
  
 Building target: decoder2
 Invoking: MacOS X C Linker
-gcc  -o "decoder2"  ./src/decoder2.o   
+gcc  -o "decoder2"  ./src/decoder.o ./src/input.o ./src/main.o   
 Finished building target: decoder2
  
 
-10:37:26 Build Finished. 0 errors, 0 warnings. (took 1s.62ms)
+11:17:43 Build Finished. 0 errors, 0 warnings. (took 1s.119ms)
 

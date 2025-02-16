@@ -1,0 +1,21 @@
+/*
+ * decoder.c
+ *
+ *  Created on: Feb 16, 2025
+ *      Author: alessandro.nardinelli
+ */
+
+
+Message_t decoder(int32_t const inputMessage) {
+
+	Message_t decodedMessage;
+
+	// decoder logic
+
+
+
+
+
+	return decodedMessage;
+
+}
