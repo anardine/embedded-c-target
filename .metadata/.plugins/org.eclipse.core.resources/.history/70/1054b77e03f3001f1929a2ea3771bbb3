@@ -12,9 +12,9 @@
 
 Message decoder(int32_t const inputMessage) {
 
-	Message decoderVar;
+	Message decodedVar;
 
-	decoderVar.messageValue = inputMessage;
+	decodedVar.messageValue = inputMessage;
 
 	// decoder logic
 	//int32_t const *p = &inputMessage;

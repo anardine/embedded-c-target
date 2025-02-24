@@ -14,8 +14,6 @@ Message decoder(int32_t const inputMessage) {
 
 	Message decoderVar;
 
-	decoderVar.messageValue = inputMessage;
-
 	// decoder logic
 	//int32_t const *p = &inputMessage;
 	//printf("value of the memory address where the message is stored to: %p \n", p);

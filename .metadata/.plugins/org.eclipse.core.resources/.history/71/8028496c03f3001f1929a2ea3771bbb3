@@ -17,7 +17,11 @@
 int main(void) {
 
 
-	decoder(collectInput());
+	Message message;
+
+	message.messageValue = collectInput();
+
+	decoder(message.messageValue);
 
 	getchar();
 	return EXIT_SUCCESS;
