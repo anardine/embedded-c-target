@@ -17,9 +17,11 @@
 int main(void) {
 
 
-	int32_t collected32bitData = collectInput();
+	Message message;
 
-	decoder(collected32bitData);
+	message.messageValue = collectInput();
+
+	decoder(message.messageValue);
 
 	getchar();
 	return EXIT_SUCCESS;

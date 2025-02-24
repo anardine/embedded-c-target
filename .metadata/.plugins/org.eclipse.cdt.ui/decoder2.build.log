@@ -1,4 +1,4 @@
-12:25:53 **** Incremental Build of configuration Release for project decoder2 ****
+19:55:56 **** Incremental Build of configuration Release for project decoder2 ****
 make all 
 Building file: ../src/decoder.c
 Invoking: GCC C Compiler
@@ -16,5 +16,5 @@ gcc  -o "decoder2"  ./src/decoder.o ./src/input.o ./src/main.o
 Finished building target: decoder2
  
 
-12:25:55 Build Finished. 0 errors, 0 warnings. (took 2s.273ms)
+19:55:58 Build Finished. 0 errors, 0 warnings. (took 1s.31ms)
 
