@@ -9,6 +9,7 @@
 
 void initialize(void) {
 
+	// create the pointers to the memory variables
 
 
 

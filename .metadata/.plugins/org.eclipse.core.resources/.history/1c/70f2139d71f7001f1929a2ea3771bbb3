@@ -36,7 +36,5 @@
 
 void initialize(void);
 
-void setPUPDResistors(void);
-
 
 #endif /* INITIALIZE_H_ */

@@ -12,9 +12,5 @@ void readInput(void) {
 
 	// create the read input logic
 
-	while(1) {
-
-	}
-
 
 }

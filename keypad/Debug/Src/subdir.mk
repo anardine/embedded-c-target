@@ -7,18 +7,21 @@
 C_SRCS += \
 ../Src/initialize.c \
 ../Src/main.c \
+../Src/readInput.c \
 ../Src/syscalls.c \
 ../Src/sysmem.c 
 
 OBJS += \
 ./Src/initialize.o \
 ./Src/main.o \
+./Src/readInput.o \
 ./Src/syscalls.o \
 ./Src/sysmem.o 
 
 C_DEPS += \
 ./Src/initialize.d \
 ./Src/main.d \
+./Src/readInput.d \
 ./Src/syscalls.d \
 ./Src/sysmem.d 
 
@@ -30,7 +33,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/initialize.cyclo ./Src/initialize.d ./Src/initialize.o ./Src/initialize.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+	-$(RM) ./Src/initialize.cyclo ./Src/initialize.d ./Src/initialize.o ./Src/initialize.su ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/readInput.cyclo ./Src/readInput.d ./Src/readInput.o ./Src/readInput.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
 
 .PHONY: clean-Src
 

@@ -28,7 +28,10 @@ int main(void)
 
 	// create a initializer class with all the pointers and reg addresses
 
+	while(1){
+
 	// create a inputListener class which understand what key was pressed and prints the key pressed
 
+	}
 
 }
