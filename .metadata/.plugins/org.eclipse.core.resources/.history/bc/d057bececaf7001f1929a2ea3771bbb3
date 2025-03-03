@@ -1,0 +1,20 @@
+/*
+ * initialize.c
+ *
+ *  Created on: Mar 2, 2025
+ *      Author: alessandro.nardinelli
+ */
+
+#include "initialize.h"
+
+void initialize(void) {
+
+	// enabling the RCC in pins A and B
+	RCC_AHB1ENR_t *pToGPIOAClock = (RCC_AHB1ENR_t *) 0x40023830;
+
+	pToGPIOAClock->GPIOAEN = 1;
+	pToGPIOAClock->GPIOBEN = 1;
+
+
+
+}

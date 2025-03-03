@@ -1,0 +1,41 @@
+/*
+ * initialize.c
+ *
+ *  Created on: Mar 2, 2025
+ *      Author: alessandro.nardinelli
+ */
+
+#include "initialize.h"
+
+void initialize(void) {
+
+	// enabling the RCC in pins A and B
+	RCC_AHB1ENR_t *pToGPIOAClock = (RCC_AHB1ENR_t *) 0x40023830;
+
+	pToGPIOAClock->GPIOAEN = 1;
+	pToGPIOAClock->GPIOBEN = 1;
+	pToGPIOAClock->GPIOCEN = 1;
+
+
+
+	// second poiinter should be to the mem adress of gpio enable
+	 int32_t *pToGPIOAMode = (int32_t *) 0x000000;
+
+	// third pointer should be to the mem address of input/output
+	 int32_t *pToGPIOARead = (int32_t *) 0x000000;
+
+	 // create the pointers to the memory
+	 // first pointer should be the clock
+	  int32_t *pToGPIOCClock = (int32_t *) 0x000000;
+
+	 // second poiinter should be to the mem adress of gpio enable
+	  int32_t *pToGPIOCMode = (int32_t *) 0x000000;
+
+	 // third pointer should be to the mem address of input/output
+	  int32_t *pToGPIOCRead = (int32_t *) 0x000000;
+
+
+
+
+
+}

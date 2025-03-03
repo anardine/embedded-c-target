@@ -12,24 +12,24 @@ void initialize(void) {
 	// enabling the RCC in pins A, B and C
 	RCC_AHB1ENR_t *pToGPIOAClock = (RCC_AHB1ENR_t *) 0x40023830;
 
-	pToGPIOAClock->GPIOAEN = ENABLED;
-	pToGPIOAClock->GPIOBEN = ENABLED;
-	pToGPIOAClock->GPIOCEN = ENABLED;
+	pToGPIOAClock->GPIOAEN = 1;
+	pToGPIOAClock->GPIOBEN = 1;
+	pToGPIOAClock->GPIOCEN = 1;
 
 
 	// enabling mode output in A0, A1, A4, A5 to INPUT (00)
 	GPIOA_MODER_t *pToGPIOAMode = (GPIOA_MODER_t *) 0x40020000;
-	pToGPIOAMode->MODER0 = DISABLED;
-	pToGPIOAMode->MODER1 = DISABLED;
-	pToGPIOAMode->MODER4 = DISABLED;
-	pToGPIOAMode->MODER5 = DISABLED;
+	pToGPIOAMode->MODER0 = 0;
+	pToGPIOAMode->MODER1 = 0;
+	pToGPIOAMode->MODER4 = 0;
+	pToGPIOAMode->MODER5 = 0;
 
 
 	// enabling mode output in B0, B1, B4, B5 to INPUT (00)
 	GPIOB_MODER_t *pToGPIOBMode = (GPIOB_MODER_t *) 0x40020400;
-	pToGPIOBMode->MODER0 = ENABLED;
-	pToGPIOBMode->MODER1 = ENABLED;
-	pToGPIOBMode->MODER4 = ENABLED;
-	pToGPIOBMode->MODER5 = ENABLED;
+	pToGPIOBMode->MODER0 = 1;
+	pToGPIOBMode->MODER1 = 1;
+	pToGPIOBMode->MODER4 = 1;
+	pToGPIOBMode->MODER5 = 1;
 
 }

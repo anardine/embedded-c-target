@@ -13,11 +13,6 @@
 #include <stdint.h>
 
 
-typedef enum {
-	ENABLED = 1,
-	DISABLED = 0
-}STATUS;
-
 typedef struct {
 		int32_t GPIOAEN			:1;
 		int32_t GPIOBEN			:1;
