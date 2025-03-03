@@ -32,18 +32,12 @@ void initialize(void) {
 	pToGPIOBMode->MODER5 = ON;
 
 
-	// Set B (Rows) to High as default and A (Columns) to 0 as default
+	// enable A input and B output
 	GPIOB_ODR_t *pToGPIOBOutput = (GPIOB_ODR_t *) 0x40020414;
-	pToGPIOBOutput->ODR0 = ON;
-	pToGPIOBOutput->ODR1 = ON;
-	pToGPIOBOutput->ODR2 = ON;
-	pToGPIOBOutput->ODR3 = ON;
+	pToGPIOBInput->ODR0 = ON;
+	pToGPIOBInput->ODR1 = ON;
+	pToGPIOBInput->ODR2 = ON;
+	pToGPIOBInput->ODR3 = ON;
 
-
-	GPIOA_IDR_t *pToGPIOAInput = (GPIOA_IDR_t *) 0x40020010;
-	pToGPIOAInput->IDR0 = OFF;
-	pToGPIOAInput->IDR1 = OFF;
-	pToGPIOAInput->IDR2 = OFF;
-	pToGPIOAInput->IDR3 = OFF;
 
 }

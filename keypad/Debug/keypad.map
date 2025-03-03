@@ -64,9 +64,9 @@ Discarded input sections
  .data          0x00000000        0x0 ./Src/initialize.o
  .bss           0x00000000        0x0 ./Src/initialize.o
  .text.initialize
-                0x00000000       0xa0 ./Src/initialize.o
- .debug_info    0x00000000      0x349 ./Src/initialize.o
- .debug_abbrev  0x00000000       0xb5 ./Src/initialize.o
+                0x00000000       0xc8 ./Src/initialize.o
+ .debug_info    0x00000000      0x3ae ./Src/initialize.o
+ .debug_abbrev  0x00000000       0xb4 ./Src/initialize.o
  .debug_aranges
                 0x00000000       0x20 ./Src/initialize.o
  .debug_rnglists
@@ -79,8 +79,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 ./Src/initialize.o
  .debug_macro   0x00000000       0x6a ./Src/initialize.o
  .debug_macro   0x00000000      0x1df ./Src/initialize.o
- .debug_line    0x00000000      0x3cd ./Src/initialize.o
- .debug_str     0x00000000     0x3eae ./Src/initialize.o
+ .debug_line    0x00000000      0x3d5 ./Src/initialize.o
+ .debug_str     0x00000000     0x3ed5 ./Src/initialize.o
  .comment       0x00000000       0x44 ./Src/initialize.o
  .debug_frame   0x00000000       0x38 ./Src/initialize.o
  .ARM.attributes

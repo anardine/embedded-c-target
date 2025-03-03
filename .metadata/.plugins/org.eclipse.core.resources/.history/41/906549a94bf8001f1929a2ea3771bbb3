@@ -14,8 +14,8 @@
 
 
 typedef enum {
-	ON = 1,
-	OFF = 0
+	ENABLED = 1,
+	DISABLED = 0
 }STATUS;
 
 typedef struct {
@@ -96,6 +96,7 @@ typedef struct {
 		int32_t Reserved		:28;
 
 	}GPIOB_ODR_t;
+
 
 
 void initialize(void);

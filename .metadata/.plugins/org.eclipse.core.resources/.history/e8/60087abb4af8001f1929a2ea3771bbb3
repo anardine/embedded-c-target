@@ -14,8 +14,8 @@
 
 
 typedef enum {
-	ON = 1,
-	OFF = 0
+	ENABLED = 1,
+	DISABLED = 0
 }STATUS;
 
 typedef struct {
@@ -77,25 +77,6 @@ typedef struct {
 
 	}GPIOB_MODER_t;
 
-
-	typedef struct {
-		int32_t IDR0			:1;
-		int32_t IDR1			:1;
-		int32_t IDR2			:1;
-		int32_t IDR3			:1;
-		int32_t Reserved		:28;
-
-	}GPIOA_IDR_t;
-
-
-	typedef struct {
-		int32_t ODR0			:1;
-		int32_t ODR1			:1;
-		int32_t ODR2			:1;
-		int32_t ODR3			:1;
-		int32_t Reserved		:28;
-
-	}GPIOB_ODR_t;
 
 
 void initialize(void);
