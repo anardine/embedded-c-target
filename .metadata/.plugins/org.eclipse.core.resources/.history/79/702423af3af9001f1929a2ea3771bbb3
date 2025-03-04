@@ -1,0 +1,31 @@
+/*
+ * main.c
+ *
+ *  Created on: Mar 4, 2025
+ *      Author: alessandro.nardinelli
+ */
+
+
+#include <stdio.h>
+#include <stdint.h>
+
+void swapArrays(int32_t *array1, int32_t *array2);
+
+
+int main(void) {
+
+
+	int8_t array1[10];
+
+
+
+	return 0;
+}
+
+void swapArrays(int32_t *array1, int32_t *array2) {
+
+
+
+
+
+}

@@ -1,14 +1,23 @@
-13:46:44 **** Incremental Build of configuration Debug for project keypad ****
-make -j11 all 
-arm-none-eabi-gcc "../Src/initialize.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/initialize.d" -MT"Src/initialize.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/initialize.o"
-arm-none-eabi-gcc -o "keypad.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alessandro.nardinelli/Documents/Embedded-C/my_workspace/target/keypad/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="keypad.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: keypad.elf
- 
-arm-none-eabi-size  keypad.elf 
-arm-none-eabi-objdump -h -S keypad.elf  > "keypad.list"
-   text	   data	    bss	    dec	    hex	filename
-    676	      0	   1568	   2244	    8c4	keypad.elf
-Finished building: default.size.stdout
- 
-Finished building: keypad.list
- 
+18:17:28 **** Incremental Build of configuration Debug for project arrayImplementation ****
+make all 
+Building file: ../src/main.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c:27:10: error: conflicting types for 'fetchArrayFromUser'
+   27 | int32_t* fetchArrayFromUser(void){
+      |          ^
+../src/main.c:13:9: note: previous declaration is here
+   13 | int32_t fetchArrayFromUser(void);
+      |         ^
+../src/main.c:50:30: error: incompatible pointer to integer conversion initializing 'int32_t' (aka 'int') with an expression of type 'int32_t (*)[n1]' (aka 'int (*)[n1]') [-Wint-conversion]
+   50 |         int32_t returnedArray[2] = {&array1, &array2};
+      |                                     ^~~~~~~
+../src/main.c:50:39: error: incompatible pointer to integer conversion initializing 'int32_t' (aka 'int') with an expression of type 'int32_t (*)[n2]' (aka 'int (*)[n2]') [-Wint-conversion]
+   50 |         int32_t returnedArray[2] = {&array1, &array2};
+      |                                              ^~~~~~~
+../src/main.c:52:9: warning: address of stack memory associated with local variable 'returnedArray' returned [-Wreturn-stack-address]
+   52 |         return returnedArray;
+      |                ^~~~~~~~~~~~~
+1 warning and 3 errors generated.
+make: *** [src/main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
