@@ -17,9 +17,6 @@ int main(void) {
 
 	int32_t *userArrays = fetchArrayFromUser();
 
-
-	printf("%p\n", userArrays);
-	printf("%p\n", userArrays+1);
 	//swapArrays(userArrays[0], userArrays[1]);
 
 	return 0;

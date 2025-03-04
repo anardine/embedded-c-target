@@ -15,12 +15,10 @@ int32_t* fetchArrayFromUser(void);
 
 int main(void) {
 
-	int32_t *userArrays = fetchArrayFromUser();
+	int32_t userArrays[2];
+	//= fetchArrayFromUser();
 
-
-	printf("%p\n", userArrays);
-	printf("%p\n", userArrays+1);
-	//swapArrays(userArrays[0], userArrays[1]);
+	swapArrays(userArrays[0], userArrays[1]);
 
 	return 0;
 }
@@ -49,17 +47,18 @@ int32_t* fetchArrayFromUser(void){
 		scanf("%d", &array2[i]);
 	}
 
-	int32_t *memAddr1 = (int32_t*) &array1;
-	int32_t *memAddr2 = (int32_t*) &array2;
-
-	int32_t returnedArray[] = {*memAddr1, *memAddr2};
+	int32_t returnedArray[] = {&(int32_t)array1, &(int32_t)array2};
 
 	return (int32_t*) returnedArray;
+
 
 }
 
 
 void swapArrays(int32_t const array1Addr, int32_t const array2Addr) {
+
+
+
 
 
 }
