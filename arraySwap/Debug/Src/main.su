@@ -1,0 +1,3 @@
+../Src/main.c:31:5:main	16	static
+../Src/main.c:47:10:fetchArrayFromUser	64	static
+../Src/main.c:84:6:swapArrays	104	dynamic

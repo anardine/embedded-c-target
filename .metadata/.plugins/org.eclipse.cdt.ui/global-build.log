@@ -1,16 +1,103 @@
-19:24:02 **** Incremental Build of configuration Debug for project arrayImplementation ****
-make all 
-Building file: ../src/main.c
-Invoking: GCC C Compiler
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
-../src/main.c:57:20: warning: address of stack memory associated with local variable 'returnedArray' returned [-Wreturn-stack-address]
-   57 |         return (int32_t*) returnedArray;
-      |                           ^~~~~~~~~~~~~
-1 warning generated.
-Finished building: ../src/main.c
+12:05:23 **** Incremental Build of configuration Debug for project arraySwap ****
+make -j11 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DNUCLEO_F411RE -DSTM32 -DSTM32F4 -DSTM32F411RETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+../Src/main.c:28:4: warning: #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use." [-Wcpp]
+arm-none-eabi-gcc -o "arraySwap.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/alessandro.nardinelli/Documents/Embedded-C/my_workspace/target/arraySwap/STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="arraySwap.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+   28 |   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+      |    ^~~~~~~
+../Src/main.c: In function 'fetchArrayFromUser':
+../Src/main.c:78:16: warning: function returns address of local variable [-Wreturn-local-addr]
+   78 |         return (int32_t*) returnedArray;
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~
+../Src/main.c: In function 'swapArrays':
+../Src/main.c:86:39: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   86 |         int32_t *array1StartOffeset = arrayAddr;
+      |                                       ^~~~~~~~~
+../Src/main.c:87:39: warning: initialization discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+   87 |         int32_t *array2StartOffeset = arrayAddr+1;
+      |                                       ^~~~~~~~~
+../Src/main.c:111:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'int32_t' {aka 'long int'} [-Wformat=]
+  111 |                 printf("%d\t",newArray1[i]);
+      |                         ~^    ~~~~~~~~~~~~
+      |                          |             |
+      |                          int           int32_t {aka long int}
+      |                         %ld
+../Src/main.c:118:26: warning: format '%d' expects argument of type 'int', but argument 2 has type 'int32_t' {aka 'long int'} [-Wformat=]
+  118 |                 printf("%d\t",newArray2[i]);
+      |                         ~^    ~~~~~~~~~~~~
+      |                          |             |
+      |                          int           int32_t {aka long int}
+      |                         %ld
+Finished building target: arraySwap.elf
  
-Building target: arrayImplementation
-Invoking: MacOS X C Linker
-gcc  -o "arrayImplementation"  ./src/main.o   
-Finished building target: arrayImplementation
+arm-none-eabi-size  arraySwap.elf 
+arm-none-eabi-objdump -h -S arraySwap.elf  > "arraySwap.list"
+   text	   data	    bss	    dec	    hex	filename
+   5468	     92	   1900	   7460	   1d24	arraySwap.elf
+Finished building: default.size.stdout
+ 
+Finished building: arraySwap.list
+ 
+12:05:34 **** Incremental Build of configuration Debug for project arraySwap ****
+make -j11 all 
+arm-none-eabi-size  arraySwap.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     92	   1900	   7460	   1d24	arraySwap.elf
+Finished building: default.size.stdout
+ 
+12:07:25 **** Incremental Build of configuration Debug for project arraySwap ****
+make -j11 all 
+arm-none-eabi-size  arraySwap.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     92	   1900	   7460	   1d24	arraySwap.elf
+Finished building: default.size.stdout
+ 
+12:08:19 **** Build of configuration Debug for project LED_RAW_TEST ****
+make -j11 all 
+arm-none-eabi-size  LED_RAW_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1004	      0	   1568	   2572	    a0c	LED_RAW_TEST.elf
+Finished building: default.size.stdout
+ 
+12:11:17 **** Incremental Build of configuration Debug for project arraySwap ****
+make -j11 all 
+arm-none-eabi-size  arraySwap.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     92	   1900	   7460	   1d24	arraySwap.elf
+Finished building: default.size.stdout
+ 
+12:13:53 **** Incremental Build of configuration Debug for project arraySwap ****
+make -j11 all 
+arm-none-eabi-size  arraySwap.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     92	   1900	   7460	   1d24	arraySwap.elf
+Finished building: default.size.stdout
+ 
+12:29:20 **** Incremental Build of configuration Debug for project arraySwap ****
+make -j11 all 
+arm-none-eabi-size  arraySwap.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     92	   1900	   7460	   1d24	arraySwap.elf
+Finished building: default.size.stdout
+ 
+12:29:33 **** Incremental Build of configuration Debug for project arraySwap ****
+make -j11 all 
+arm-none-eabi-size  arraySwap.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     92	   1900	   7460	   1d24	arraySwap.elf
+Finished building: default.size.stdout
+ 
+12:29:38 **** Incremental Build of configuration Debug for project arraySwap ****
+make -j11 all 
+arm-none-eabi-size  arraySwap.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     92	   1900	   7460	   1d24	arraySwap.elf
+Finished building: default.size.stdout
+ 
+12:30:05 **** Incremental Build of configuration Debug for project arraySwap ****
+make -j11 all 
+arm-none-eabi-size  arraySwap.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5468	     92	   1900	   7460	   1d24	arraySwap.elf
+Finished building: default.size.stdout
  
