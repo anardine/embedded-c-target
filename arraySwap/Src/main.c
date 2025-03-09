@@ -73,9 +73,9 @@ int32_t* fetchArrayFromUser(void){
 	int *pToquant1 = &n1;
 	int *pToquant2 = &n2;
 
-	int32_t returnedArray[] = {*memAddr1, *memAddr2, *pToquant1, *pToquant2};
+	int32_t *returnedArray[] = {memAddr1,memAddr2, pToquant1, pToquant2};
 
-	return (int32_t*) returnedArray;
+	return returnedArray;
 
 }
 
@@ -100,7 +100,6 @@ void swapArrays(int32_t const *arrayAddr) {
 	int32_t newArray2[array1Size];
 
 	for (int32_t i = 0; i< array1Size; i++) {
-
 		newArray2[i] = array1StartOffeset[i];
 
 	}
