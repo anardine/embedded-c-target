@@ -42,8 +42,6 @@ int main(void)
 
 }
 
-
-
 int32_t* fetchArrayFromUser(void){
 
 	int n1 = 2;
@@ -67,13 +65,10 @@ int32_t* fetchArrayFromUser(void){
 //		scanf("%d", &array2[i]);
 //	}
 
-	int32_t *memAddr1 = array1;
-	int32_t *memAddr2 = array2;
-
 	int *pToquant1 = &n1;
 	int *pToquant2 = &n2;
 
-	int32_t *returnedArray[] = {memAddr1,memAddr2, pToquant1, pToquant2};
+	int32_t *returnedArray[] = {array1,array2, pToquant1, pToquant2};
 
 	return returnedArray;
 
@@ -81,24 +76,21 @@ int32_t* fetchArrayFromUser(void){
 
 void swapArrays(int32_t const *arrayAddr[]) {
 
-	int32_t *array1StartOffeset = arrayAddr[0];
-	int32_t *array2StartOffeset = arrayAddr[1];
-
-	int32_t array1Size = *arrayAddr[2];
-	int32_t array2Size = *arrayAddr[3];
+	int32_t array1Size = **arrayAddr[2];
+	int32_t array2Size = **arrayAddr[3];
 
 	int32_t newArray1[array2Size];
 
-	for (int32_t i = 0; i< array2Size; i++) {
+	for (int32_t i = 0; i < array2Size; i++) {
 
-		newArray1[i] = *array2StartOffeset[i];
+		newArray1[i] = *(*arrayAdrr+0)+i;
 
 	}
 
 	int32_t newArray2[array1Size];
 
 	for (int32_t i = 0; i< array1Size; i++) {
-		newArray2[i] = *array1StartOffeset[i];
+		newArray2[i] = *arrayAdrr+i+1;
 
 	}
 
