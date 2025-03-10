@@ -20,9 +20,7 @@
 #include <stdio.h>
 #include <stdint.h>
 
-void swapArrays(int32_t const *arrayAddr[]);
-int32_t* fetchArrayFromUser(void);
-
+void swapArrays(int32_t **arrayAddr);
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
   #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
@@ -30,67 +28,62 @@ int32_t* fetchArrayFromUser(void);
 
 int main(void)
 {
+	int n1;
+	printf("enter the quantity of elements in the first array\n");
+	scanf("%d", &n1);
+	
+	int n2;
+	printf("enter the quantity of elements in the second array\n");
+	scanf("%d", &n2);
+	
+	int32_t array1[n1];
+	int32_t array2[n2];
+	
+	for(int i = 0; i < n1; i++){
+		printf("please enter the number for the %d position of the first array", i);
+		scanf("%d", &array1[i]);
+	}
+	
+	for(int i = 0; i < n2; i++){
+		printf("please enter the number for the %d position of the second array", i);
+		scanf("%d", &array2[i]);
+	}
+	
+	int *pToquant1 = &n1;
+	int *pToquant2 = &n2;
+	
+	int32_t *returnedArray[] = {array1, array2, pToquant1, pToquant2};
 
-	int32_t *pToUserArrays = fetchArrayFromUser();
+	printf("%p\n", returnedArray[0]);
+	printf("%p\n", returnedArray[1]);
 
-	printf("%p\n", pToUserArrays);
-	printf("%p\n", pToUserArrays+1);
-
-	swapArrays(pToUserArrays);
+	swapArrays(returnedArray);
 
 	return 0;
 
 }
 
-int32_t* fetchArrayFromUser(void){
 
-	int n1 = 2;
-//	printf("enter the quantity of elements in the first array\n");
-//	scanf("%d", &n1);
+void swapArrays(int32_t *arrayAddr[]) {
 
-	int n2 = 2;
-//	printf("enter the quantity of elements in the second array\n");
-//	scanf("%d", &n2);
+	int32_t array1Size = *arrayAddr[2];
+	int32_t array2Size = *arrayAddr[3];
 
-	int32_t array1[2] = {1,2};
-	int32_t array2[2] = {3,4};
+	printf("the array size for 1 is: %d\n", array1Size);
+	printf("the array size for 2 is: %d\n", array2Size);
 
-//	for(int i = 0; i < n1; i++){
-//		printf("please enter the number for the %d position of the first array", i);
-//		scanf("%d", &array1[i]);
-//	}
-
-//	for(int i = 0; i < n2; i++){
-//		printf("please enter the number for the %d position of the second array", i);
-//		scanf("%d", &array2[i]);
-//	}
-
-	int *pToquant1 = &n1;
-	int *pToquant2 = &n2;
-
-	int32_t *returnedArray[] = {array1,array2, pToquant1, pToquant2};
-
-	return returnedArray;
-
-}
-
-void swapArrays(int32_t const *arrayAddr[]) {
-
-	int32_t array1Size = **arrayAddr[2];
-	int32_t array2Size = **arrayAddr[3];
-
-	int32_t newArray1[array2Size];
+    int32_t newArray1[array2Size];
 
 	for (int32_t i = 0; i < array2Size; i++) {
 
-		newArray1[i] = *(*arrayAdrr+0)+i;
+		newArray1[i] = (arrayAddr[1])[i];
 
 	}
 
 	int32_t newArray2[array1Size];
 
 	for (int32_t i = 0; i< array1Size; i++) {
-		newArray2[i] = *arrayAdrr+i+1;
+		newArray2[i] = (arrayAddr[0])[i];
 
 	}
 
